@@ -44,4 +44,4 @@ EXPOSE 8888/udp
 
 CMD jupyter notebook --no-browser --ip 0.0.0.0 --port 8888
 
-RUN echo '\n\ndocker run -it --rm -p 8888:8888 geyougua/ipydk:latest\n\n'
+RUN echo '\n\ndocker run -it --rm -p 8888:8888 cbkmephisto/ipydk:latest\n\n'
