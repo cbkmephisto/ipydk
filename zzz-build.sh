@@ -1,8 +1,8 @@
 #!/bin/bash
 
-docker build -t geyougua/ipy .
+docker build -t geyougua/ipydk .
 
-# delete old image
+# delete old unused image(s)
 for doi in $(docker images | grep "<none>" | awk '{print $3}')
 do
     docker rmi $doi
