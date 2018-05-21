@@ -30,6 +30,9 @@ USER ubuntu
 RUN pip3 install numpy pandas scipy sklearn matplotlib seaborn
 RUN pip3 install django
 
+# delete cache for pip
+RUN rm -rf /home/ubuntu/.cache/pip/http/*
+
 WORKDIR /home/ubuntu
 
 RUN echo "export PATH=${PATH}:/home/ubuntu/bin;\
