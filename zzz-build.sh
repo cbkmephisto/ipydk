@@ -4,7 +4,7 @@ set -ue
 
 . param.rc $*
 
-docker build -t cbkmephisto/ipydk:$tag -f $dockerfile .
+docker build -t cbkmephisto/ipydk:$tag $tag
 
 # delete old unused image(s)
 for doi in $(docker images | grep "<none>" | awk '{print $3}')

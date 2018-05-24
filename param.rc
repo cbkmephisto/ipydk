@@ -5,17 +5,15 @@
 # usage within a script:
 #    . param.rc $*
 
-# exports tag and dockerfile
+# exports tag
 
 set -ue
 
 tag="latest"
-dockerfile="Dockerfile"
 
 if [ $# -gt 0 ]; then
     if [ $1 == "dev" ]; then
         tag="dev"
-        dockerfile="Dockerfile.dev"
     fi
 fi
 
