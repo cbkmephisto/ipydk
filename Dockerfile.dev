@@ -1,9 +1,11 @@
 FROM cbkmephisto/ipydk:latest
 
+# dev image
+# add build-essential
+# add python3-dev
+
 LABEL maintainer="Hailin Su <cbkmephisto@gmail.com>"
 
-# 12 and 4 are user input for answering questions asked by apt-get install tzdata
-# 12 is for Country: U.S., 4 is for timezone: central
 USER root
 
 RUN apt-get update &&\
