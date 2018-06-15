@@ -29,7 +29,7 @@ RUN pip3 install numpy pandas scipy sklearn matplotlib seaborn django &&\
 alias ipython=ipython3;\
 alias ll='ls -lF'" >> /home/ubuntu/.bashrc
 
-WORKDIR /home/ubuntu
+WORKDIR /home/ubuntu/work
 
 EXPOSE 8888/tcp 8888/udp
 
