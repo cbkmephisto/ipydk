@@ -2,7 +2,13 @@
 
 set -ue
 
-. param.rc $*
+tag="latest"
+
+if [ $# -gt 0 ]; then
+    if [ $1 == "dev" ]; then
+        tag="dev"
+    fi
+fi
 
 docker build -t cbkmephisto/ipydk:$tag $tag
 
