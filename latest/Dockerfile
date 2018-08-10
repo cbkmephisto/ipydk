@@ -18,16 +18,19 @@ RUN echo "12" > inp &&\
     useradd -m -s /bin/bash -p 'ubuntu' ubuntu && \
     adduser ubuntu sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers &&\
-    cd /usr/share/javascript && ln -sf ../fonts-font-awesome font-awesome
+    cd /usr/share/javascript && ln -sf ../fonts-font-awesome font-awesome &&\
+	cd /usr/bin && ln -sf ipython3 ipython
 
 USER ubuntu
 
-RUN pip3 install numpy pandas scipy sklearn matplotlib seaborn django &&\
+RUN pip3 install numpy pandas scipy sklearn matplotlib seaborn django bokeh bs4 &&\
     # delete cache for pip
     rm -rf /home/ubuntu/.cache/pip/http/* &&\
     echo "export PATH=${PATH}:/home/ubuntu/bin;\
-alias ipython=ipython3;\
-alias ll='ls -lF'" >> /home/ubuntu/.bashrc
+	alias ipython=ipython3;\
+	alias ll='ls -lF'" >> /home/ubuntu/.bashrc;\
+	[ ! -d /home/ubuntu/.ipython/profile_default/startup ] && mkdir -p /home/ubuntu/.ipython/profile_default/startup;\
+	echo "import numpy as np" >> /home/ubuntu/.ipython/profile_default/startup/n-numpy.py
 
 WORKDIR /home/ubuntu/work
 
