@@ -23,7 +23,7 @@ RUN echo "12" > inp &&\
 
 USER ubuntu
 
-RUN pip3 install numpy pandas scipy sklearn matplotlib seaborn django bokeh bs4 &&\
+RUN pip3 install --force-reinstall --no-cache-dir tornado==4.5.3 numpy pandas scipy sklearn matplotlib seaborn django bokeh bs4 &&\
     # delete cache for pip
     rm -rf /home/ubuntu/.cache/pip/http/* &&\
     echo "export PATH=${PATH}:/home/ubuntu/bin;\
