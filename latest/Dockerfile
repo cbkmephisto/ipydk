@@ -28,6 +28,7 @@ RUN pip3 install --force-reinstall --no-cache-dir tornado==4.5.3 numpy pandas sc
     rm -rf /home/ubuntu/.cache/pip/http/* &&\
     echo "export PATH=${PATH}:/home/ubuntu/bin;\
 	alias ipython=ipython3;\
+	alias ipydk='cd && jupyter notebook --ip 0.0.0.0 --port 8888';\
 	alias ll='ls -lF'" >> /home/ubuntu/.bashrc;\
 	[ ! -d /home/ubuntu/.ipython/profile_default/startup ] && mkdir -p /home/ubuntu/.ipython/profile_default/startup;\
 	echo "import numpy as np" >> /home/ubuntu/.ipython/profile_default/startup/n-numpy.py
